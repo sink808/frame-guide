@@ -1,21 +1,19 @@
 .container {
   display: flex;
   flex-wrap: wrap;
-  gap: 24px;
-  padding: 20px;
-  border-radius: 16px;
-  background: white;
+  justify-content: space-between;
+  gap: 1.5rem;
 }
 
 .group {
   display: flex;
   flex-direction: column;
-  gap: 8px;
-  min-width: 220px;
+  gap: 0.5rem;
+  min-width: 13.75rem;
 }
 
 .label {
-  font-size: 13px;
+  font-size: var(--font-size__sm);
   font-weight: 600;
 }
 
@@ -26,23 +24,14 @@
 .actions {
   display: flex;
   align-items: center;
-  gap: 10px;
-}
-
-.button {
-  padding: 8px 14px;
-  border: none;
-  border-radius: 8px;
-  background: #111;
-  color: white;
-  cursor: pointer;
+  gap: 0.75rem;
 }
 
 .scale {
-  font-size: 14px;
+  font-size: var(--font-size__sm);
   font-weight: 600;
 }
 
 .range {
-  margin-top: 0.25rem;
+  margin: 0.25rem 0.625rem 0 0;
 }
