@@ -1,0 +1,45 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+}
+
+.toolbar {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.scale {
+  font-size: var(--font-size__sm);
+  font-weight: 600;
+}
+
+.stage {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  max-width: 26.25rem;
+  aspect-ratio: 9 / 16; // IG story aspect ratio
+  overflow: hidden;
+  border-radius: 1rem;
+  background: var(--color__gray-08);
+  cursor: grab;
+
+  &.dragging {
+    cursor: grabbing;
+  }
+}
+
+.transform {
+  transition: transform 0.03s linear;
+}
+
+.image {
+  max-width: 100%;
+  max-height: 100%;
+  user-select: none;
+  pointer-events: none;
+}

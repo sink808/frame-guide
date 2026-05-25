@@ -5,6 +5,7 @@ import useImageUpload from 'hooks/useImageUpload';
 
 // Components
 import UploadArea from 'components/UploadArea';
+import Stage from 'components/Stage';
 
 // Styles
 import classNames from 'classnames/bind';
@@ -24,6 +25,7 @@ const App: React.FC = () => {
 
       <div className={cx('workspace')}>
         <UploadArea image={image} onUpload={uploadImage} onRemove={removeImage} />
+        <Stage image={image} />
       </div>
     </div>
   );

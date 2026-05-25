@@ -1,5 +1,4 @@
 import React, { ChangeEvent, DragEvent, useRef, useState } from 'react';
-import classNames from 'classnames/bind';
 
 // Types
 import { UploadedImage } from 'types';
@@ -8,8 +7,8 @@ import { UploadedImage } from 'types';
 import Button from 'components/basic/Button';
 
 // Styles
+import classNames from 'classnames/bind';
 import styles from './index.scss';
-
 const cx = classNames.bind(styles);
 
 interface Props {

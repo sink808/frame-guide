@@ -12,6 +12,15 @@
       background: var(--color__text-primary);
     }
   }
+
+  &.secondary {
+    background: var(--color__main-secondary);
+
+    &:hover {
+      background: var(--color__text-secondary);
+    }
+  }
+
   &.danger {
     background: var(--color__danger);
 
