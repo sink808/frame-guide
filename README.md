@@ -11,6 +11,7 @@ This project was inspired by that workflow — a simple tool to simulate crop ra
 ## Demo
 
 ![Frame Guide Demo](./public/demo.png)
+![Live Demo](https://frame-guide.vercel.app/)
 
 ## Features
 
