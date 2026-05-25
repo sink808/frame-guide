@@ -4,6 +4,7 @@ import classNames from 'classnames/bind';
 
 // Components
 import Button from 'components/basic/Button';
+import Range from 'components/basic/Range';
 
 // Constants
 import { CROP_RATIOS } from 'constants/index';
@@ -40,7 +41,6 @@ const ControlPanel: React.FC<Props> = ({
   <div className={cx('container')}>
     <div className={cx('group')}>
       <label className={cx('label')}>Crop Ratio</label>
-
       <select
         className={cx('select')}
         value={ratio.label}
@@ -63,14 +63,13 @@ const ControlPanel: React.FC<Props> = ({
     <div className={cx('group')}>
       <label className={cx('label')}>Overlay Opacity</label>
 
-      <input
-        className={cx('slider')}
-        type="range"
+      <Range
+        className={cx('range')}
+        values={[opacity]}
+        onChange={(values) => onOpacityChange(values[0])}
+        step={0.1}
         min={0.2}
         max={1}
-        step={0.1}
-        value={opacity}
-        onChange={(event) => onOpacityChange(Number(event.target.value))}
       />
     </div>
 

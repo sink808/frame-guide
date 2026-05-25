@@ -1,0 +1,24 @@
+.track {
+  height: 0.75rem;
+  width: 100%;
+  border-radius: 0.375rem;
+
+  &.disabled {
+    background: var(--color__gray-02);
+  }
+}
+
+.thumb {
+  height: 1.5rem;
+  width: 1.5rem;
+  border-radius: 50%;
+  background: var(--color__main-primary);
+
+  &.disabled {
+    background: var(--color__gray-03);
+  }
+
+  &:focus-visible {
+    outline: var(--color__gray-04) auto 1px;
+  }
+}
