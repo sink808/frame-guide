@@ -1,0 +1,14 @@
+.container {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.frame {
+  width: 80%;
+  max-height: 80%;
+  border: 2px solid #00d4ff;
+  box-shadow: 0 0 0 9999px rgba(0, 0, 0, 0.35);
+}

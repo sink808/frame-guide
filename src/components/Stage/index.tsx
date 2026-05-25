@@ -2,13 +2,12 @@ import React from 'react';
 
 // Hooks
 import useDrag from 'hooks/useDrag';
-import usePanZoom from 'hooks/usePanZoom';
 
 // Types
-import { UploadedImage } from 'types';
+import { UploadedImage, CropRatio, Position } from 'types';
 
 // Components
-import Button from 'components/basic/Button';
+import OverlayLayer from 'components/Overlays/OverlayLayer';
 
 // Styles
 import classNames from 'classnames/bind';
@@ -17,11 +16,21 @@ const cx = classNames.bind(styles);
 
 interface Props {
   image: UploadedImage | null;
+  ratio: CropRatio;
+  opacity: number;
+  scale: number;
+  position: Position;
+  setPosition: React.Dispatch<React.SetStateAction<Position>>;
 }
 
-const Stage: React.FC<Props> = ({ image }) => {
-  const { scale, position, setPosition, zoomIn, zoomOut, reset } = usePanZoom();
-
+const Stage: React.FC<Props> = ({
+  image,
+  ratio,
+  opacity,
+  scale,
+  position,
+  setPosition,
+}) => {
   const {
     isDragging,
     handleMouseDown,
@@ -38,50 +47,31 @@ const Stage: React.FC<Props> = ({ image }) => {
   }
 
   return (
-    <div className={cx('container')}>
+    <div
+      className={cx('stage', {
+        dragging: isDragging,
+      })}
+      onMouseDown={handleMouseDown}
+      onMouseMove={handleMouseMove}
+      onMouseUp={handleMouseUp}
+      onMouseLeave={handleMouseLeave}
+    >
       <div
-        className={cx('stage', {
-          dragging: isDragging,
-        })}
-        onMouseDown={handleMouseDown}
-        onMouseMove={handleMouseMove}
-        onMouseUp={handleMouseUp}
-        onMouseLeave={handleMouseLeave}
+        className={cx('transform')}
+        style={{
+          transform: `
+        translate(
+          ${position.x}px,
+          ${position.y}px
+        )
+        scale(${scale})
+      `,
+        }}
       >
-        <div
-          className={cx('transform')}
-          style={{
-            transform: `
-              translate(
-                ${position.x}px,
-                ${position.y}px
-              )
-              scale(${scale})
-            `,
-          }}
-        >
-          <img
-            src={image.url}
-            alt="stage"
-            className={cx('image')}
-            draggable={false}
-          />
-        </div>
+        <img src={image.url} alt="stage" className={cx('image')} draggable={false} />
       </div>
-      <div className={cx('toolbar')}>
-        <Button theme="primary" onClick={zoomOut}>
-          -
-        </Button>
-        <Button theme="primary" onClick={zoomIn}>
-          +
-        </Button>
 
-        <Button theme="secondary" onClick={reset}>
-          Reset
-        </Button>
-
-        <span className={cx('scale')}>{(scale * 100).toFixed(0)}%</span>
-      </div>
+      <OverlayLayer ratio={ratio} opacity={opacity} />
     </div>
   );
 };

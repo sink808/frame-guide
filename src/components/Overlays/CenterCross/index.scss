@@ -1,0 +1,26 @@
+.container {
+  position: absolute;
+  inset: 0;
+}
+
+.vertical,
+.horizontal {
+  position: absolute;
+  background: rgba(255, 255, 255, 0.6);
+}
+
+.vertical {
+  top: 0;
+  bottom: 0;
+  left: 50%;
+  width: 1px;
+  transform: translateX(-50%);
+}
+
+.horizontal {
+  left: 0;
+  right: 0;
+  top: 50%;
+  height: 1px;
+  transform: translateY(-50%);
+}

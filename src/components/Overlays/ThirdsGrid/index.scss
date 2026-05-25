@@ -1,0 +1,40 @@
+.container {
+  position: absolute;
+  inset: 0;
+}
+
+.v1,
+.v2,
+.h1,
+.h2 {
+  position: absolute;
+  background: rgba(255, 255, 255, 0.5);
+}
+
+.v1,
+.v2 {
+  top: 0;
+  bottom: 0;
+  width: 1px;
+}
+
+.h1,
+.h2 {
+  left: 0;
+  right: 0;
+  height: 1px;
+}
+
+.v1 {
+  left: 33.33%;
+}
+.v2 {
+  left: 66.66%;
+}
+
+.h1 {
+  top: 33.33%;
+}
+.h2 {
+  top: 66.66%;
+}
