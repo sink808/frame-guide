@@ -1,0 +1,31 @@
+.button {
+  padding: 0.625rem 1rem;
+  border: none;
+  border-radius: 0.5rem;
+  color: var(--color__btn-text);
+  cursor: pointer;
+
+  &.primary {
+    background: var(--color__main-primary);
+
+    &:hover {
+      background: var(--color__text-primary);
+    }
+  }
+  &.danger {
+    background: var(--color__danger);
+
+    &:hover {
+      background: var(--color__text-danger);
+    }
+  }
+
+  &.disabled {
+    background: var(--color__gray-02);
+    cursor: not-allowed;
+
+    &:hover {
+      background: var(--color__gray-02);
+    }
+  }
+}
