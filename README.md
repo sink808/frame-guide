@@ -8,10 +8,10 @@ When preparing images on desktop for social media platforms like Instagram, it c
 
 This project was inspired by that workflow — a simple tool to simulate crop ratios and help visualize image composition before posting.
 
-## Demo
+## 👀 Demo
 
+[Live Demo](https://frame-guide.vercel.app/)
 ![Frame Guide Demo](./public/demo.png)
-![Live Demo](https://frame-guide.vercel.app/)
 
 ## Features
 
